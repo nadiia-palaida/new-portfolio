@@ -1,0 +1,192 @@
+@import "_colors.scss";
+@import "_animation.scss";
+@import "_fonts.scss";
+@import "_mixins.scss";
+
+* {
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	list-style: none;
+	word-wrap: break-word;
+	box-sizing: border-box;
+	@include font;
+	transition: all 0.3s linear;
+}
+
+.container {
+	max-width: 1220px;
+	height: 100%;
+}
+
+#particles-js canvas{
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.btn {
+	display: inline-block;
+	background-color: $main-color;
+	text-transform: uppercase;
+	font-size: 14px;
+	font-weight: 500;
+	border-radius: 30px;
+	padding: 11px 30px;
+	cursor: pointer;
+	color: $btn-text;
+	font-family: 'Poppins', sans-serif;
+
+	&.active,
+	&:hover {
+		color: $main-color;
+		background-color: $hover-color;
+		text-transform: uppercase;
+	}
+}
+
+.header {
+	position: relative;
+	height: 100vh;
+	background: url('../img/backgrounds/forest.jpg') center no-repeat;
+	background-size: cover;
+
+	&-top {
+		padding-top: 25px;
+		height: 78px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&-right {
+		display: flex;
+		algn-items: center;
+	}
+
+
+	&-socials {
+		margin-right: 100px;
+
+		.socials-list {
+			display: flex;
+
+			.social-item {
+				margin-right: 30px;
+
+				&:last-child {
+					margin-right: 0;
+				}
+
+				a {
+					font-size: 20px;
+					line-height: 20px;
+					color: $main-color;
+
+					&:hover {
+						color: $hover-color;
+
+						i {
+							color: $hover-color;
+						}
+					}
+
+				}
+			}
+		}
+	}
+
+	
+	&-burger {
+		cursor: pointer;
+
+		&:hover {
+
+			.burger-item{
+
+				&::before{
+					animation: toleft 1s linear forwards;
+					transition: all 2s;
+				}
+			}
+		}
+		.burger-item {
+			display: block;
+			position: relative;
+			height: 2px;
+			width: 27px;
+			background-color: $main-color;
+			border-right: 2px;
+
+			&::before {
+				position: absolute;
+				display: block;
+				right: 0;
+				top: 8px;
+				content: '';
+				height: 2px;
+				width: 17px;
+				background-color: $main-color;
+				border-right: 2px;
+			}
+
+			&::after {
+				position: absolute;
+				display: block;
+				top: 16px;
+				content: '';
+				height: 2px;
+				width: 27px;
+				background-color: $main-color;
+				border-right: 2px;
+			}
+
+		}
+	}
+
+	&-main {
+		width: 50%;
+		margin: 0 auto;
+		height: calc(100% - 78px - 25px);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		&-suptitle {
+			font-size: 17px;
+			text-transform: uppercase;
+			font-weight: 500;
+			margin-bottom: 20px;
+			cursor: default;
+
+			i {
+				color: $hover-color;
+				font-size: 25px;
+			}
+		}
+
+		&-title {
+			font-size: 66px;
+			text-transform: uppercase;
+			font-weight: 600;
+			line-height: 90px;
+			cursor: default;
+		}
+
+		.snake {
+			width: 60px;
+			height: 10px;
+			margin-bottom: 50px;
+
+			svg {
+				fill: $hover-color;
+			}
+		}
+
+
+		.btn:first-child {
+			margin-right: 40px;
+		}
+	}
+}
